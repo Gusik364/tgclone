@@ -1,0 +1,12 @@
+{
+  "upgradeBackdrops": [
+    {
+      "name": "Electric Purple",
+      "centerColor": "#ca70c6",
+      "edgeColor": "#9662d4",
+      "patternColor": "#620fb4",
+      "textColor": "#ebceff",
+      "rarityPermille": 20
+    }
+  ]
+}

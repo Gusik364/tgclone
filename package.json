@@ -1,0 +1,90 @@
+{
+  "name": "telegram-clone",
+  "version": "1.0.0",
+  "description": "Telegram web app clone to allow sending of text messages, voice notes, making of voice calls and video calls",
+  "main": "electron-main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "electron": "electron .",
+    "electron:dev": "electron . --dev",
+    "build:electron": "electron-builder --win --x64",
+    "build:electron:dir": "electron-builder --win --x64 --dir"
+  },
+  "build": {
+    "appId": "com.telegramclone.app",
+    "productName": "Telegram Clone",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "electron-main.js",
+      "index.js",
+      "server.js",
+      "socket.js",
+      "app.js",
+      "admin.js",
+      "controllers/**/*",
+      "models/**/*",
+      "routers/**/*",
+      "socketControllers/**/*",
+      "utilities/**/*",
+      "client/build/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "client/build/logo512.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "portable": {
+      "artifactName": "Telegram-Clone.exe"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdekolaThanni/Telegram-Clone.git"
+  },
+  "author": "Adekola Thanni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdekolaThanni/Telegram-Clone/issues"
+  },
+  "homepage": "https://github.com/AdekolaThanni/Telegram-Clone#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cloudinary": "^1.33.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1",
+    "multer": "^2.0.2",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12",
+    "pkg": "^5.8.1"
+  }
+}
